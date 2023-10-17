@@ -29,7 +29,7 @@ export const Logout = () => {
   };
   return (
     <>
-      <button type="button" onClick={logout}>
+      <button className="text-gray-50" type="button" onClick={logout}>
         Logout
       </button>
     </>

@@ -19,7 +19,7 @@ export const Profile = () => {
 
   return (
     <>
-      <button type="button" onClick={openProfile}>
+      <button className="text-gray-50" type="button" onClick={openProfile}>
         Profile
       </button>
       {openState && (

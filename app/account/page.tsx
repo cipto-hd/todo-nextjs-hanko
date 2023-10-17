@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import { Hanko } from "@teamhanko/hanko-elements";
 
 const Account = () => {
@@ -24,6 +25,10 @@ const Account = () => {
     })();
   }, [hanko]);
 
-  return <div>Hello </div>;
+  return (
+    <div className="flex items-center justify-center p-4 gap-x-4">
+      Hello <Button>Check ShadCN-UI</Button>
+    </div>
+  );
 };
 export default Account;
