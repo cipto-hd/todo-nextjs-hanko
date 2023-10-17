@@ -2,16 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { register } from "@teamhanko/hanko-elements";
-
 export const Profile = () => {
   const [openState, setOpenState] = useState(false);
-
-  useEffect(() => {
-    register(process.env.NEXT_PUBLIC_HANKO_API_URL ?? "").catch((error) => {
-      console.log(error);
-    });
-  }, []);
 
   const openProfile = () => {
     setOpenState(!openState);

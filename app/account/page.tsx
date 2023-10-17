@@ -2,26 +2,18 @@
 
 import { useEffect, useState } from "react";
 
+import { useHanko } from "@/components/HankoProvider";
 import { Button } from "@/components/ui/button";
-import { Hanko } from "@teamhanko/hanko-elements";
 
 const Account = () => {
-  const [hanko, setHanko] = useState<Hanko>();
-
-  useEffect(() => {
-    import("@teamhanko/hanko-elements")
-      .then(({ Hanko }) => {
-        setHanko(new Hanko(process.env.NEXT_PUBLIC_HANKO_API_URL ?? ""));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const hanko = useHanko();
 
   useEffect(() => {
     (async () => {
-      const user = await hanko?.user.getCurrent();
-      console.log(user);
+      if (hanko) {
+        const user = await hanko?.user.getCurrent();
+        console.log(user);
+      }
     })();
   }, [hanko]);
 
